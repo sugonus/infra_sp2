@@ -35,10 +35,8 @@ sudo docker-compose up
 Выполнить миграции
 ```
 docker-compose exec web python manage.py migrate
-```gunicorn==20.0.4
-gunicorn==20.0.4
+```
 Собрать статику
-
 ```
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
