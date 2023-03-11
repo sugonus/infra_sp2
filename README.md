@@ -26,9 +26,11 @@ http://127.0.0.1:8000/redoc/
 ```
 git clone git@github.com:sugunos/infra_sp2.git
 ```
-
+Перейти в директорию с docker-compose.yaml
+```
+cd infra_sp2/infra/
+```
 Запустить docker-compose
-
 ```
 sudo docker-compose up
 ```
