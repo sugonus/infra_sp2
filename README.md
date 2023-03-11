@@ -53,10 +53,6 @@ cd infra_sp2/api_yamdb/
 ```
 docker-compose exec web python manage.py migrate
 ```
-Собрать статику
-```
-docker-compose exec web python manage.py collectstatic --no-input 
-```
 
 ### Авторизация пользователей:
 Для получения доступа необходимо создать пользователя отправив POST запрос на эндпоинт ```/api/v1/auth/signup/``` username и email
