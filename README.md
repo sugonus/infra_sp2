@@ -22,42 +22,23 @@ http://127.0.0.1:8000/redoc/
 git clone git@github.com:sugunos/api_yamdb.git
 ```
 
-Cоздать и активировать виртуальное окружение:
+Запустить docker-compose
 
 ```
-python -m venv venv
+sudo docker-compose up
+```
+Выполнить миграции
+```
+docker-compose exec web python manage.py migrate
 ```
 
-```
-source venv/source/activate
-```
-
-Установить зависимости из файла requirements.txt:
+Собрать статику
 
 ```
-pip install -r requirements.txt
+docker-compose exec web python manage.py collectstatic --no-input 
 ```
 
-Выполнить миграции:
 
-```
-python manage.py makemigrations
-```
-```
-python manage.py migrate
-```
-
-Импортировать базу данных из csv-файлов:
-
-```
-python manage.py import_csv
-```
-
-Запустить проект:
-
-```
-python manage.py runserver
-```
 
 ### Авторизация пользователей:
 Для получения доступа необходимо создать пользователя отправив POST запрос на эндпоинт ```/api/v1/auth/signup/``` username и email
