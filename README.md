@@ -45,14 +45,6 @@ SECRET_KEY=секретный ключ
 ```
 sudo docker-compose up
 ```
-Открыть второй терминал, перейти в директорию с manage.py
-```
-cd infra_sp2/api_yamdb/
-```
-Выполнить миграции
-```
-docker-compose exec web python manage.py migrate
-```
 
 ### Авторизация пользователей:
 Для получения доступа необходимо создать пользователя отправив POST запрос на эндпоинт ```/api/v1/auth/signup/``` username и email
