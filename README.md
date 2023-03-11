@@ -12,8 +12,8 @@
 ### Технологии
 - Python 3.7
 - Django 2.2.19
-Gunicorn 20.0.4
-Nginx 1.21.3
+- Gunicorn 20.0.4
+- Nginx 1.21.3
 
 ### Полный список запросов и эндпоинтов описан в документации ReDoc, доступна после запуска проекта по адресу:
 ```
@@ -35,7 +35,7 @@ sudo docker-compose up
 Выполнить миграции
 ```
 docker-compose exec web python manage.py migrate
-```
+```gunicorn==20.0.4
 gunicorn==20.0.4
 Собрать статику
 
