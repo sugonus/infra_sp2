@@ -38,6 +38,19 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
 
+### Шаблон наполнения .env-файла
+
+```
+DB_ENGINE=указываем, что работаем с postgresql
+DB_NAME=имя базы данных
+POSTGRES_USER=логин для подключения к базе данных
+POSTGRES_PASSWORD=пароль для подключения к БД
+DB_HOST=название сервиса (контейнера)
+DB_PORT=порт для подключения к БД
+SECRET_KEY=секретный ключ
+
+```
+
 
 
 ### Авторизация пользователей:
