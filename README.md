@@ -30,6 +30,17 @@ git clone git@github.com:sugunos/infra_sp2.git
 ```
 cd infra_sp2/infra/
 ```
+Создать и заполнить .env-файл по шаблону:
+```
+DB_ENGINE=указываем, что работаем с postgresql
+DB_NAME=имя базы данных
+POSTGRES_USER=логин для подключения к базе данных
+POSTGRES_PASSWORD=пароль для подключения к БД
+DB_HOST=название сервиса (контейнера)
+DB_PORT=порт для подключения к БД
+SECRET_KEY=секретный ключ
+
+```
 Запустить docker-compose
 ```
 sudo docker-compose up
@@ -42,21 +53,6 @@ docker-compose exec web python manage.py migrate
 ```
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
-
-### Шаблон наполнения .env-файла
-
-```
-DB_ENGINE=указываем, что работаем с postgresql
-DB_NAME=имя базы данных
-POSTGRES_USER=логин для подключения к базе данных
-POSTGRES_PASSWORD=пароль для подключения к БД
-DB_HOST=название сервиса (контейнера)
-DB_PORT=порт для подключения к БД
-SECRET_KEY=секретный ключ
-
-```
-
-
 
 ### Авторизация пользователей:
 Для получения доступа необходимо создать пользователя отправив POST запрос на эндпоинт ```/api/v1/auth/signup/``` username и email
