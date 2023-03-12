@@ -11,13 +11,14 @@
 Доступ к БД проекта осуществляется через Api.
 ### Технологии
 - Python 3.7
-- Django 2.2.19
+- Django 3.2
+- Django REST Framework 3.12.4
 - Gunicorn 20.0.4
 - Nginx 1.21.3
 
 ### Полный список запросов и эндпоинтов описан в документации ReDoc, доступна после запуска проекта по адресу:
 ```
-http://127.0.0.1:8000/redoc/
+localhost/redoc/
 ```
 
 ### Как запустить проект в контейнерах:
@@ -39,11 +40,14 @@ POSTGRES_PASSWORD=пароль для подключения к БД
 DB_HOST=название сервиса (контейнера)
 DB_PORT=порт для подключения к БД
 SECRET_KEY=секретный ключ
-
 ```
 Запустить docker-compose
 ```
 sudo docker-compose up
+```
+Выполнить миграции
+```
+docker-compose exec web python manage.py migrate
 ```
 
 ### Авторизация пользователей:
@@ -80,17 +84,17 @@ sudo docker-compose up
 Получение списка всех категорий:
 
 ```
-http://127.0.0.1:8000/api/v1/categories/
+/api/v1/categories/
 ```
 Получение списка всех жанров:
 
 ```
-http://127.0.0.1:8000/api/v1/genres/
+/api/v1/genres/
 ```
 
 Получение списка всех произведений:
 
 ```
-http://127.0.0.1:8000/api/v1/titles/
+/api/v1/titles/
 ```
 
